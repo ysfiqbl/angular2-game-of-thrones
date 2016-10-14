@@ -42,11 +42,19 @@ Before running the tests make sure you are serving the app via `ng serve`.
 To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 ###step-02
-Create components which will be responsible for the CRUD operations of characters. We will create a `CharacterComponent` which will contain following the child components
+Create components which will be responsible for the CRUD operations of characters. These components will belong to a parent `CharacterComponent`. 
+
+The `CharacterComponent` will have the following child components:
 - `CharacterAddComponent` form to add characters  and can be reached via the route `/characters/add`
 - `CharacterDetailComponent` component to view details of character and can be reached via the route `/characters/:id` where `:id` is the id of the character. 
 - `CharacterEditComponent` edit functionality of a character will be handled by this component and can be reached via the route `/characters/edit:id` where `:id` is the id of the character. 
 - `CharacterListComponent` this component will be responsible for displaying a list of characters and can be reached via the route `/characters/:id`
+
+NOTE: The generated components will always have
+- `component.css` file for component styles
+- `component.html` file for the components template
+- `component.ts` file for the components logic
+- `component.spec.ts` file for the unit tests
 
 The components were created using the following commands. 
 ```
@@ -54,5 +62,16 @@ ng g c character
 ng g c character/character-add
 ng g c character/character-list
 ng g c character/character-detail 
-ng c character/character-edit
+ng g c character/character-edit
 ```
+
+We will also have a module class
+- `CharacterModule` [NgModules](https://angular.io/docs/ts/latest/guide/ngmodule.html) class that tells Anglar how to compile and run the `character` module code.
+
+
+Create a `CharacterModule` class using `ng g m character`. Take a look at the Angular documentation on [NgModules](https://angular.io/docs/ts/latest/guide/ngmodule.html) to understand why we use modules. It is basically a class that tells Anglar how to compile and run the `character` module code.
+
+As well as a router
+- `character.routing.ts` a file that defines the routing for the `character` components
+Create a new file called `character.routing.ts`. `angular-cli` does not support generating routes while this section.
+
