@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { CharacterComponent } from './character.component';
 import { CharacterAddComponent } from './character-add/character-add.component';
@@ -12,7 +13,8 @@ import { routing } from './character.routing';
 @NgModule({
 	imports: [
 		CommonModule,
-		routing
+		routing,
+		FormsModule
 	],
 	declarations: [
 		CharacterComponent,
