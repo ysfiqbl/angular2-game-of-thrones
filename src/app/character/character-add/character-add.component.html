@@ -1,12 +1,12 @@
 <label for="name">Name</label>
-<input name="name" value="" />
-<label for="status">Status</label>
-<input name="status" value="" />
+<input name="name" [(ngModel)]="character.name" />
+<label for="deceased">Status</label>
+<input name="status" type="checkbox" [(ngModel)]="character.deceased" />
 <label for="age">Age</label>
-<input name="age" value="" />
+<input name="age" [(ngModel)]="character.age" />
 <label for="origin">Origin</label>
-<input name="origin" value="" />
+<input name="origin" [(ngModel)]="character.origin" />
 
-<i>Need to implement add functionality</i>
+<button (click)="add()">Add character</button>
 
 <a routerLink="/characters">Goto List</a>
